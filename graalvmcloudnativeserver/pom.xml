@@ -13,7 +13,7 @@
     <artifactId>graalvmcloudnativeserver</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>graalvmcloudnativeserver</name>
-    <description>Do iT Demo Server For GraalVM USING JAVA 20 </description>
+    <description>Do iT Demo Server For GraalVM USING JAVA 21 </description>
     <properties>
         <java.version>21</java.version>
         <docker.platforms>linux/amd64,linux/arm64</docker.platforms>
