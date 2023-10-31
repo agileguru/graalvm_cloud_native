@@ -18,6 +18,7 @@
         <java.version>21</java.version>
         <docker.platforms>linux/amd64,linux/arm64</docker.platforms>
         <app.executable>/maven/${project.artifactId}-${project.version}.jar</app.executable>
+        <base.image>ghcr.io/graalvm/jdk-community:${java.version}</base.image>
     </properties>
     <dependencies>
         <dependency>
@@ -74,9 +75,9 @@
                         <image>
                             <name>%g/${project.name}</name>
                             <build>
-                                <from>ghcr.io/graalvm/jdk-community:${java.version}</from>
+                                <from>${base.image}</from>
                                 <createImageOptions>
-                                    <platform>linux/amd64,linux/arm64</platform>
+                                    <platform>${docker.platforms}</platform>
                                 </createImageOptions>
                                 <cmd>
                                     <exec>
