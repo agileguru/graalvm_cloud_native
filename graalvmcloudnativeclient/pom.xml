@@ -72,11 +72,19 @@
 				<version>1.13.1</version>
 				<executions>
 					<execution>
+                        <id>create-image</id>
 						<goals>
 							<goal>build</goal>
 						</goals>
 						<phase>install</phase>
 					</execution>
+					<execution>
+                        <id>push-image</id>
+                        <goals>
+                            <goal>push</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
 				</executions>
 				<configuration>
 					<images>
