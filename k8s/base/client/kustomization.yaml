@@ -4,4 +4,5 @@ metadata:
   name: client-mapping
 
 resources:
+  - config.yaml
   - client.yaml

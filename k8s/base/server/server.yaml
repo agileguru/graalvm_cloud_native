@@ -21,17 +21,17 @@ spec:
         livenessProbe:
           httpGet:
             port: 8080
-            path: /actuator/health
+            path: /server/actuator/health
           initialDelaySeconds: 2  
         readinessProbe:
           httpGet:
             port: 8080
-            path: /actuator/health
+            path: /server/actuator/health
           initialDelaySeconds: 2  
         startupProbe:
           httpGet:
             port: 8080
-            path: /actuator/health
+            path: /server/actuator/health
           initialDelaySeconds: 30
         resources:
           requests:

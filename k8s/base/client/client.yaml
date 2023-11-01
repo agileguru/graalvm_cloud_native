@@ -18,6 +18,9 @@ spec:
       - name: client-containter
         image: docker.io/agileguru/graalvmcloudnativeclient:main
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: client-config
         livenessProbe:
           httpGet:
             port: 8888
