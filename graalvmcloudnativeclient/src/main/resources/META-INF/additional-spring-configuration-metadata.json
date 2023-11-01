@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "app.remote.server",
+  "type": "java.lang.String",
+  "description": "This is the remote API server to process my request"
+}]}

@@ -20,17 +20,17 @@ spec:
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
-            port: 8080
+            port: 8888
             path: /actuator/health
           initialDelaySeconds: 2  
         readinessProbe:
           httpGet:
-            port: 8080
+            port: 8888
             path: /actuator/health
           initialDelaySeconds: 2  
         startupProbe:
           httpGet:
-            port: 8080
+            port: 8888
             path: /actuator/health
           initialDelaySeconds: 30
         resources:
@@ -51,7 +51,7 @@ spec:
   type: NodePort
   ports:
   - name: webport
-    port: 8080
-    targetPort: 8080
+    port: 8888
+    targetPort: 8888
   selector:
     app: client    
