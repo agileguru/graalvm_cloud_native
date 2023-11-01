@@ -10,3 +10,5 @@ resources:
 - ../../base/server
 - ../../base/client
 
+# patchesStrategicMerge:
+#   - server-override.yaml
