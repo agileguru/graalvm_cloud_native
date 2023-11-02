@@ -1,0 +1,6 @@
+bindings:
+- members:
+  - allUsers
+  role: roles/run.invoker
+
+# gcloud run services set-iam-policy multi-container-example policy.yaml
