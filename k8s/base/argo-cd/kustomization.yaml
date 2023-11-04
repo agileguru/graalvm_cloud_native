@@ -10,3 +10,4 @@ resources:
 #  - argo-cd.yaml
   - argocd-repos.yaml
   - trivy.yaml
+  - kcert.yaml
