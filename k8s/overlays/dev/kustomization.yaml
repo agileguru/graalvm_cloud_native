@@ -9,6 +9,8 @@ resources:
 - ../../base/namespaces/dev
 - ../../base/server
 - ../../base/client
+- ../../base/nepa-ingress
+
 
 # patchesStrategicMerge:
 #   - server-override.yaml
