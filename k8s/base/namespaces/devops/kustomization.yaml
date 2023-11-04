@@ -4,4 +4,4 @@ metadata:
   name: devops-namespaces
 
 resources:
-  - devops.yaml
+  - namespace.yaml

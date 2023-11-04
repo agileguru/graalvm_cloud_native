@@ -6,5 +6,5 @@ metadata:
 namespace: devops
 
 resources:
-- ../../base/namespaces/devops
+# - ../../base/namespaces/devops
 - ../../base/argo-cd

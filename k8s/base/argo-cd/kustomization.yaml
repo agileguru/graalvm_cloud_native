@@ -6,6 +6,7 @@ metadata:
 namespace: devops
 
 resources:
-  - argocd-cmd-params-cm.yaml
-  - argo-cd.yaml
+#  - argocd-cmd-params-cm.yaml
+#  - argo-cd.yaml
   - argocd-repos.yaml
+  - trivy.yaml
