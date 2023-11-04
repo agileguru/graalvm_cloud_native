@@ -1,0 +1,35 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kcert-ssl
+  namespace: devops
+spec:
+  destination:
+    namespace: kcert-system
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      parameters:
+        - name: acmeTermsAccepted
+          value: "true"
+        - name: acmeEmail
+          value: "nepa@nepa.com"
+        - name: acmeDirUrl
+          value: "https://acme-v02.api.letsencrypt.org/directory"    
+    chart: kcert
+    repoURL: https://nabsul.github.io/helm
+    targetRevision: 1.0.6
+  syncPolicy:
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
+      limit: 5
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
