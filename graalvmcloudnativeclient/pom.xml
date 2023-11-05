@@ -67,24 +67,56 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.11</version> <!-- Use the latest version -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase> <!-- You can customize the phase -->
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.10.0.2594</version> <!-- Use the latest version -->
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sonar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.eclipse.jkube</groupId>
 				<artifactId>kubernetes-maven-plugin</artifactId>
 				<version>1.13.1</version>
 				<executions>
 					<execution>
-                        <id>create-image</id>
+						<id>create-image</id>
 						<goals>
 							<goal>build</goal>
 						</goals>
 						<phase>install</phase>
 					</execution>
 					<execution>
-                        <id>push-image</id>
-                        <goals>
-                            <goal>push</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
+						<id>push-image</id>
+						<goals>
+							<goal>push</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
 				</executions>
 				<configuration>
 					<images>
@@ -113,5 +145,12 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
