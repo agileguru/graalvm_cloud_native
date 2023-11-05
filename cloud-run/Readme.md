@@ -3,7 +3,7 @@
 ## Deploy multi container app 
 > gcloud run services replace service.yaml
 
-> cloud run services set-iam-policy multi-container-example policy.yaml
+> gcloud run services set-iam-policy multi-container-example policy.yaml
 
 ## Deploy single container app
 > gcloud run services replace server.yaml
