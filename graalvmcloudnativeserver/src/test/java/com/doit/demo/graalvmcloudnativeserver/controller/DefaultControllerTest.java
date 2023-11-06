@@ -2,6 +2,8 @@ package com.doit.demo.graalvmcloudnativeserver.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.net.UnknownHostException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -18,7 +20,7 @@ public class DefaultControllerTest {
 	}
 
 	@Test
-	void testDefaultGetResponseNotNull() {
+	void testDefaultGetResponseNotNull() throws UnknownHostException {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
@@ -28,7 +30,7 @@ public class DefaultControllerTest {
 	}
 	
 	@Test
-	void testDefaultGetResponseHasMessage() {
+	void testDefaultGetResponseHasMessage() throws UnknownHostException {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
@@ -38,7 +40,7 @@ public class DefaultControllerTest {
 	
 	
 	@Test
-	void testDefaultGetResponseHasOKStatus() {
+	void testDefaultGetResponseHasOKStatus() throws UnknownHostException {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
@@ -47,7 +49,7 @@ public class DefaultControllerTest {
 	}
 	
 	@Test
-	void testDefaultGetResponseHasHostName() {
+	void testDefaultGetResponseHasHostName() throws UnknownHostException {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
