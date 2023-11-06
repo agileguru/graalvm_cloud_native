@@ -11,13 +11,13 @@ public class DefaultClientController {
 
 	@Value("${app.remote.server}")
 	private String remoteServer;
-	
+
 	private RestTemplate template = new RestTemplate();
-	
+
 	@GetMapping("/")
 	public ResponseEntity<String> getRemoteMessage() {
 		ResponseEntity<String> serverResponse = template.getForEntity(remoteServer, String.class);
-		return new ResponseEntity<String>(serverResponse.getBody(), serverResponse.getStatusCode());
+		return new ResponseEntity<>(serverResponse.getBody(), serverResponse.getStatusCode());
 	}
 
 }

@@ -14,9 +14,9 @@ public class DefaultController {
 	@GetMapping("/")
 	public ResponseEntity<String> sayHello() throws UnknownHostException {
 		String respString;
-			respString = "Hello From " + InetAddress.getLocalHost().getHostName() + " Server";
-			return new ResponseEntity<String>(respString,HttpStatus.OK);
-		
+		respString = "Hello From " + InetAddress.getLocalHost().getHostName() + " Server";
+		return new ResponseEntity<>(respString, HttpStatus.OK);
+
 	}
 
 }
