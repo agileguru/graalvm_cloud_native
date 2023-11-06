@@ -22,7 +22,7 @@ public class DefaultControllerTest {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
-	 assertThat(resp.getBody()).isNotNull().isEqualTo("Hello From Server");
+	 assertThat(resp.getBody()).isNotNull().contains("Hello From ").endsWith(" Server");
 	 assertThat(resp.getStatusCode()).isNotNull().isEqualTo(HttpStatus.OK);
 	 
 	}
@@ -32,7 +32,7 @@ public class DefaultControllerTest {
 
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
-	 assertThat(resp.getBody()).isNotNull().isEqualTo("Hello From Server");
+	 assertThat(resp.getBody()).isNotNull().contains("Hello From ").endsWith(" Server");
 	 
 	}
 	
@@ -43,6 +43,15 @@ public class DefaultControllerTest {
 	 ResponseEntity<String> resp = controller.sayHello();
 	 assertThat(resp).isNotNull();
 	 assertThat(resp.getStatusCode()).isNotNull().isEqualTo(HttpStatus.OK);
+	 
+	}
+	
+	@Test
+	void testDefaultGetResponseHasHostName() {
+
+	 ResponseEntity<String> resp = controller.sayHello();
+	 assertThat(resp).isNotNull();
+	 assertThat(resp.getBody()).isNotNull().hasSizeGreaterThan("Hello From Server".length());
 	 
 	}
 
