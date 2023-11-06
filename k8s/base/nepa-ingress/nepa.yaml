@@ -9,10 +9,10 @@ spec:
   ingressClassName: "nginx"
   tls:
   - hosts:
-    - nepa.demo.agileguru.org
-    secretName: nepa-alacritysys-com
+    - nepadoit.demo.agileguru.org
+    secretName: nepadoit-agileguru-org
   rules:
-  - host: nepa.demo.agileguru.org
+  - host: nepadoit.demo.agileguru.org
     http:
       paths:
       - path: /
