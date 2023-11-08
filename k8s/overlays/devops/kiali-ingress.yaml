@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nepa-ingress
+  namespace: istio-system
+  labels:
+    kcert.dev/ingress: "managed"
+spec:
+  ingressClassName: "nginx"
+  tls:
+  - hosts:
+    - nepakiali.demo.agileguru.org
+    secretName: nepakiali-agileguru-org
+  rules:
+  - host: nepakiali.demo.agileguru.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: kiali
+            port: 
+                number: 20001

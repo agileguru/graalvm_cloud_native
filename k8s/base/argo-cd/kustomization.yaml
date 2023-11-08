@@ -13,3 +13,4 @@ resources:
   - kcert.yaml
   - istio-base.yaml
   - istio-istiod.yaml
+  - kiali.yaml
