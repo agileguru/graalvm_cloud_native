@@ -6,11 +6,12 @@ metadata:
 spec:
     hosts: 
     - nepadoitguru.demo.agileguru.org
+    - dev-server-router
     targetPendingRequests: 5
     scaleTargetRef:
         deployment: server-deployment
         service: server-service
         port: 8080
     replicas:
-        min: 1
+        min: 0
         max: 3
