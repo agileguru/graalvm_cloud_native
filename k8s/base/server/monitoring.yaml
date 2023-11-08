@@ -1,0 +1,17 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: server-metrics
+  namespace: dev
+  labels:
+    app.kubernetes.io/name: server-metrics
+    app.kubernetes.io/part-of: server-metrics
+spec:
+  endpoints:
+  - port: 8080
+    scheme: http
+    interval: 10s
+    path: /server/actuator/prometheus
+  selector:
+    matchLabels:
+      app: server
