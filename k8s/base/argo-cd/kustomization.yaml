@@ -15,3 +15,4 @@ resources:
   - istio-istiod.yaml
   - kiali.yaml
   - keda.yaml
+  - kedahttpaddon.yaml
