@@ -29,3 +29,10 @@ spec:
             name: dev-server-router
             port: 
                 number: 8080
+      - path: /queue
+        pathType: Prefix
+        backend:
+          service: 
+            name: keda-router-admin
+            port: 
+                number: 9090          

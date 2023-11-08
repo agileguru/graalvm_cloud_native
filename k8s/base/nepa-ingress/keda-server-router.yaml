@@ -6,3 +6,12 @@ metadata:
 spec:
   type: ExternalName
   externalName: keda-add-ons-http-interceptor-proxy.keda.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: keda-router-admin
+  namespace: dev
+spec:
+  type: ExternalName
+  externalName: keda-add-ons-http-interceptor-admin.keda.svc.cluster.local  
