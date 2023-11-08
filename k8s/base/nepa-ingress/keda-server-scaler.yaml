@@ -6,7 +6,7 @@ metadata:
 spec:
     hosts: 
     - nepadoitguru.demo.agileguru.org
-    targetPendingRequests: 30
+    targetPendingRequests: 5
     scaleTargetRef:
         deployment: server-deployment
         service: server-service
