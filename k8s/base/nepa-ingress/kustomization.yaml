@@ -4,4 +4,6 @@ metadata:
   name: nepa-app-ingress-mapping
 
 resources:
+  - keda-server-router.yaml
   - nepa.yaml
+  - keda-server-scaler.yaml

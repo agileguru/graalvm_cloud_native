@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: client-config
 data:
-  APP_REMOTE_SERVER: http://server-service:8080/server/
+  APP_REMOTE_SERVER: http://dev-server-router:8080/server/

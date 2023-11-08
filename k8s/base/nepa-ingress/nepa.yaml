@@ -9,10 +9,10 @@ spec:
   ingressClassName: "nginx"
   tls:
   - hosts:
-    - nepadoit.demo.agileguru.org
+    - nepadoitguru.demo.agileguru.org
     secretName: nepadoit-agileguru-org
   rules:
-  - host: nepadoit.demo.agileguru.org
+  - host: nepadoitguru.demo.agileguru.org
     http:
       paths:
       - path: /
@@ -26,6 +26,6 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: server-service
+            name: dev-server-router
             port: 
                 number: 8080
