@@ -12,7 +12,7 @@ spec:
   source:
     chart: istiod
     repoURL: https://istio-release.storage.googleapis.com/charts
-    targetRevision: 1.16.1
+    targetRevision: 1.19.3
   syncPolicy:
     retry:
       backoff:
