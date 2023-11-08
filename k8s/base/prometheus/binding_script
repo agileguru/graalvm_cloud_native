@@ -1,0 +1,3 @@
+gcloud iam service-accounts add-iam-policy-binding devops-k8s-cluster-ser-ac@guru-playground.iam.gserviceaccount.com \
+    --role roles/iam.workloadIdentityUser \
+    --member "serviceAccount:guru-playground.svc.id.goog[devops/prometheus-frontend]"

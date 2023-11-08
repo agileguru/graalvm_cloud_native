@@ -1,0 +1,17 @@
+apiVersion: monitoring.googleapis.com/v1
+kind: PodMonitoring
+metadata:
+  name: ingress-nginx
+  namespace: default
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+spec:
+  endpoints:
+  - port: 10254
+    scheme: http
+    interval: 30s
+    path: /metrics
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: ingress-nginx
