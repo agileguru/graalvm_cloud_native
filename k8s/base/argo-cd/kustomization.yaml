@@ -11,3 +11,5 @@ resources:
   - argocd-repos.yaml
   - trivy.yaml
   - kcert.yaml
+  - istio-base.yaml
+  - istio-istiod.yaml
