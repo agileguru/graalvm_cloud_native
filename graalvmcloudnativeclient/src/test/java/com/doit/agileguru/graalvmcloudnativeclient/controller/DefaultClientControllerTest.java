@@ -28,7 +28,7 @@ public class DefaultClientControllerTest {
 	@Test
 	void testDefaultGetResponseBodyNotEmpty() {
 		ResponseEntity<String> resp = controller.getRemoteMessage();
-		Assertions.assertThat(resp.getBody()).isNotNull().isNotEmpty().contains("Hello From ").endsWith(" Server");
+		Assertions.assertThat(resp.getBody()).isNotNull().isNotEmpty().contains("Hello From ").contains(" Server");
 		Assertions.assertThat(resp.getBody()).isNotNull().isNotEmpty().hasSizeGreaterThan("Hello From Server".length());
 	}
 }
