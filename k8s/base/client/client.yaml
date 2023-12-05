@@ -6,7 +6,7 @@ metadata:
     version: v1
   name: client-deployment
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: client
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: client-containter
-        image: docker.io/agileguru/graalvmcloudnativeclient:main
+        image: docker.io/agileguru/graalvmcloudnativeclient:appfarm
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
@@ -60,4 +60,8 @@ spec:
     port: 8888
     targetPort: 8888
   selector:
-    app: client    
+    app: client
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10

@@ -13,5 +13,5 @@ spec:
         service: server-service
         port: 8080
     replicas:
-        min: 0
-        max: 3
+        min: 4
+        max: 6
