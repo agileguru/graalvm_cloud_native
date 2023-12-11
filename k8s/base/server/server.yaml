@@ -6,7 +6,7 @@ metadata:
     version: v1
   name: server-deployment
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: server
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: server-containter
-        image: docker.io/agileguru/graalvmcloudnativeserver:appfarm
+        image: docker.io/agileguru/graalvmcloudnativeserver:websocket
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -58,7 +58,7 @@ spec:
     targetPort: 8080
   selector:
     app: server
-  # sessionAffinity: ClientIP
-  # sessionAffinityConfig:
-  #   clientIP:
-  #     timeoutSeconds: 1
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 120

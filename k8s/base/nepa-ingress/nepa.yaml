@@ -26,7 +26,7 @@ spec:
         pathType: Prefix
         backend:
           service: 
-            name: dev-server-router
+            name: server-service
             port: 
                 number: 8080
       - path: /queue

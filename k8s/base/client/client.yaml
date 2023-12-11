@@ -6,7 +6,7 @@ metadata:
     version: v1
   name: client-deployment
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: client
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: client-containter
-        image: docker.io/agileguru/graalvmcloudnativeclient:appfarm
+        image: docker.io/agileguru/graalvmcloudnativeclient:websocket
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
