@@ -12,7 +12,7 @@ pipeline {
             steps {
                 container('maven') {
                     // Build your Java application
-                    sh './graalvmcloudnativeserver/mvnw -f ./graalvmcloudnativeserver/pom.xml clean install'
+                    sh 'mvn -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 container('maven') {
                     // Build your Java application
-                    sh './graalvmcloudnativeclient/mvnw -f ./graalvmcloudnativeclient/pom.xml clean install'
+                    sh 'mvn -f ./graalvmcloudnativeclient/pom.xml clean install'
                 }
             }
         }
