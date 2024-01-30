@@ -2,7 +2,7 @@ pipeline {
     agent {
         kubernetes {
             // Configure the Kubernetes Pod template for Java 21 and Docker support
-            yaml """
+            yaml '''
                 apiVersion: v1
                 kind: Pod
                 spec:
@@ -19,7 +19,7 @@ pipeline {
                 //   - name: docker-sock
                 //     hostPath:
                 //       path: /var/run/docker.sock
-            """
+            '''
         }
     }
 
