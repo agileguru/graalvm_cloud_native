@@ -12,6 +12,10 @@ pipeline {
                       command:
                       - cat
                       tty: true
+            '''
+        }
+    }
+
                 //     volumeMounts:
                 //     - name: docker-sock
                 //       mountPath: /var/run/docker.sock
@@ -19,10 +23,6 @@ pipeline {
                 //   - name: docker-sock
                 //     hostPath:
                 //       path: /var/run/docker.sock
-            '''
-        }
-    }
-
     stages {
         stage('Checkout') {
             steps {
