@@ -8,7 +8,7 @@ pipeline {
                 spec:
                 containers:
                 - name: maven
-                    image: maven:3.9.4-amazoncorretto-21  # Use a Maven image with Java 21
+                    image: maven:3.9.4-amazoncorretto-21
                     command:
                     - cat
                     tty: true
