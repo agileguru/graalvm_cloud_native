@@ -3,23 +3,23 @@ pipeline {
         kubernetes {
             // Configure the Kubernetes Pod template for Java 21 and Docker support
             yaml """
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: maven
-    image: maven:3.9.4-amazoncorretto-21  # Use a Maven image with Java 21
-    command:
-    - cat
-    tty: true
-//     volumeMounts:
-//     - name: docker-sock
-//       mountPath: /var/run/docker.sock
-//   volumes:
-//   - name: docker-sock
-//     hostPath:
-//       path: /var/run/docker.sock
-      """
+                apiVersion: v1
+                kind: Pod
+                spec:
+                containers:
+                - name: maven
+                    image: maven:3.9.4-amazoncorretto-21  # Use a Maven image with Java 21
+                    command:
+                    - cat
+                    tty: true
+                //     volumeMounts:
+                //     - name: docker-sock
+                //       mountPath: /var/run/docker.sock
+                //   volumes:
+                //   - name: docker-sock
+                //     hostPath:
+                //       path: /var/run/docker.sock
+            """
         }
     }
 
