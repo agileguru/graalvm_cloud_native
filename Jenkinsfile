@@ -2,7 +2,7 @@
 pipeline {
   agent {
     kubernetes {
-        label 'docker-build-pod'
+        // label 'docker-build-pod'
         yamlFile 'podtemplate/jenkinstemplate.yaml'
         idleMinutes 120
     }
