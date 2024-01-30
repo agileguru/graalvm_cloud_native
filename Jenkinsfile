@@ -33,28 +33,31 @@ spec:
 
         stage('Build Server') {
             steps {
-                // Build your Java application
-                sh 'cd graalvmcloudnativeserver'
-                sh './mvnw clean install'
+                container('maven') {
+                    // Build your Java application
+                    sh 'cd graalvmcloudnativeserver'
+                    sh './mvnw clean install'
+                }
             }
         }
 
         stage('Build Client') {
             steps {
-                // Build your Java application
-                sh 'cd ../graalvmcloudnativeclient'
-                sh './mvnw clean install'
-
+                container('maven') {
+                    // Build your Java application
+                    sh 'cd graalvmcloudnativeclient'
+                    sh './mvnw clean install'
+                }
             }
         }
 
-        stage('Push Docker Image') {
-            steps {
-                // Build the Docker image using a Dockerfile
-                sh 'docker push us-central1-docker.pkg.dev/devops-353009/devops-docker/graalvmcloudnativeserver:main'
-                sh 'docker push us-central1-docker.pkg.dev/devops-353009/devops-docker/graalvmcloudnativeclient:main'
-            }
-        }
+        // stage('Push Docker Image') {
+        //     steps {
+        //         // Build the Docker image using a Dockerfile
+        //         sh 'docker push us-central1-docker.pkg.dev/devops-353009/devops-docker/graalvmcloudnativeserver:main'
+        //         sh 'docker push us-central1-docker.pkg.dev/devops-353009/devops-docker/graalvmcloudnativeclient:main'
+        //     }
+        // }
 
     }
 }
