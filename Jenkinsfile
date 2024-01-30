@@ -17,14 +17,14 @@ pipeline {
             }
         }
 
-        stage('Build Client') {
-            steps {
-                container('maven') {
-                    // Build your Java application
-                    sh 'mvn -f ./graalvmcloudnativeclient/pom.xml clean install'
-                }
-            }
-        }
+        // stage('Build Client') {
+        //     steps {
+        //         container('maven') {
+        //             // Build your Java application
+        //             sh 'mvn -f ./graalvmcloudnativeclient/pom.xml clean install'
+        //         }
+        //     }
+        // }
         stage('Docker Build') {
         steps {
             container('docker'){
