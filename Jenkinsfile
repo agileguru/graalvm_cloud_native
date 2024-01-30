@@ -6,12 +6,12 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
-                containers:
-                - name: maven
-                    image: maven:3.9.4-amazoncorretto-21
-                    command:
-                    - cat
-                    tty: true
+                  containers:
+                    - name: maven
+                      image: maven:3.9.4-amazoncorretto-21
+                      command:
+                      - cat
+                      tty: true
                 //     volumeMounts:
                 //     - name: docker-sock
                 //       mountPath: /var/run/docker.sock
