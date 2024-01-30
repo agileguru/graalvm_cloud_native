@@ -12,8 +12,7 @@ pipeline {
             steps {
                 container('maven') {
                     // Build your Java application
-                    sh 'cd graalvmcloudnativeserver'
-                    sh 'ls -la'
+                    sh './graalvmcloudnativeserver/mvnw -f ./graalvmcloudnativeserver clean install'
                 }
             }
         }
@@ -22,17 +21,16 @@ pipeline {
             steps {
                 container('maven') {
                     // Build your Java application
-                    sh 'cd graalvmcloudnativeclient'
-                    sh 'ls -la'
+                    sh './graalvmcloudnativeclient/mvnw -f ./graalvmcloudnativeclient clean install'
                 }
             }
         }
-    stage('Docker Build') {
-      steps {
-        container('docker'){
-          sh 'docker images'
+        stage('Docker Build') {
+        steps {
+            container('docker'){
+            sh 'docker images'
+            }
         }
-      }
     }
     
   }
