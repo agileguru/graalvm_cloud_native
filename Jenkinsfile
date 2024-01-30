@@ -42,7 +42,7 @@ spec:
         stage('Build Client') {
             steps {
                 // Build your Java application
-                sh 'cd graalvmcloudnativeclient'
+                sh 'cd ../graalvmcloudnativeclient'
                 sh './mvnw clean install'
 
             }
