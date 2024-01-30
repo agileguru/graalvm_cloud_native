@@ -13,7 +13,7 @@ pipeline {
                 container('maven') {
                     // Build your Java application
                     sh 'cd graalvmcloudnativeserver'
-                    sh './mvnw clean install'
+                    sh 'ls -la'
                 }
             }
         }
@@ -23,7 +23,7 @@ pipeline {
                 container('maven') {
                     // Build your Java application
                     sh 'cd graalvmcloudnativeclient'
-                    sh './mvnw clean install'
+                    sh 'ls -la'
                 }
             }
         }
