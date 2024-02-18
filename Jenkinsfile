@@ -14,8 +14,6 @@ pipeline {
                     // Build your Java application
                     sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml ~/.m2/settings.xml'
                 }
-            }
-            steps {
                 container('maven') {
                     // Build your Java application
                     sh 'cat ~/.m2/settings.xml'
