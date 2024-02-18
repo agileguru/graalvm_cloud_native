@@ -14,8 +14,6 @@ pipeline {
                     // Build your Java application
                     sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml .'
                 }
-            }
-            steps {
                 container('maven') {
                     // Build your Java application
                     sh './graalvmcloudnativeserver/mvnw --settings ./settings.xml -f ./graalvmcloudnativeserver/pom.xml clean install'
@@ -29,8 +27,6 @@ pipeline {
                     // Build your Java application
                     sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml .'
                 }
-            }
-            steps {
                 container('maven') {
                     // Build your Java application
                     sh 'mvn --settings ./settings.xml -f ./graalvmcloudnativeclient/pom.xml clean compile'
