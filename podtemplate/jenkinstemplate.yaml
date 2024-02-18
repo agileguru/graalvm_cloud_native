@@ -23,8 +23,8 @@ spec:
   - name: google
     image: google/cloud-sdk:slim
     command:
-    - gsutil
-    args: ["cp", "gs://devops-353009-configurations/maven/settings.xml","~/.m2/settings.xml"]
+    - cat
+    tty: true
     volumeMounts:
     - mountPath: /var/run/docker.sock
       name: docker-sock
