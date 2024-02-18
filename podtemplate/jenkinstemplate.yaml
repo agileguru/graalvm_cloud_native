@@ -15,10 +15,10 @@ spec:
     env:
     - name: CONTAINER_ENV_VAR
       value: jnlp
-  - name: maven
-    image: maven:3.9.4-amazoncorretto-21
+  - name: google-cloud-sdk
+    image: google/cloud-sdk:slim
     command:
-    - cat
+    - gsutil cp gs://devops-353009-configurations/maven/settings.xml ~/.m2/settings.xml
     tty: true
   - name: docker
     image: docker:25.0.1
