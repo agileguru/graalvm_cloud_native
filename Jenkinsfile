@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Build Server') {
             steps {
-                container('google') {
+                container('maven') {
                     // Build your Java application
                     sh './graalvmcloudnativeserver/mvnw --settings ./settings.xml -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build Client') {
             steps {
-                container('google') {
+                container('maven') {
                     // Build your Java application
                     sh 'mvn --settings ./settings.xml -f ./graalvmcloudnativeclient/pom.xml clean compile'
                 }
