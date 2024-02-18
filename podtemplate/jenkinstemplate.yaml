@@ -15,11 +15,11 @@ spec:
     env:
     - name: CONTAINER_ENV_VAR
       value: jnlp
-  - name: maven
-    image: maven:3.9.4-amazoncorretto-21
-    command:
-    - cat
-    tty: true
+  # - name: maven
+  #   image: maven:3.9.4-amazoncorretto-21
+  #   command:
+  #   - cat
+  #   tty: true
   - name: google
     image: google/cloud-sdk:slim
     command:
