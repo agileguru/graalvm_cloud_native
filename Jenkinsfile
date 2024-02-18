@@ -8,6 +8,15 @@ pipeline {
     }
   }
   stages {
+        stage('Get Config Settings') {
+            steps {
+                container('google') {
+                    // Build your Java application
+                    sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml ~/.m2/settings.xml'
+                }
+            }
+        }
+
         stage('Build Server') {
             steps {
                 container('maven') {
