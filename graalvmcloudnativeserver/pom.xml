@@ -19,8 +19,6 @@
         <docker.platforms>linux/amd64,linux/arm64</docker.platforms>
         <app.executable>/maven/${project.artifactId}-${project.version}.jar</app.executable>
         <base.image>openjdk:21-jdk</base.image>
-        <sonar.host.url>https://devops.demo.agileguru.org/sonar</sonar.host.url>
-        <sonar.login>squ_cd82592309da1c5e77b65821ce7cf4e697d36342</sonar.login>
     </properties>
     <dependencies>
         <dependency>
