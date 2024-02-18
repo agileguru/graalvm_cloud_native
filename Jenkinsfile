@@ -8,15 +8,13 @@ pipeline {
     }
   }
   stages {
-        stage('Get Build Config') {
+        stage('Build Server') {
             steps {
                 container('google') {
                     // Build your Java application
                     sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml .'
                 }
             }
-        }
-        stage('Build Server') {
             steps {
                 container('maven') {
                     // Build your Java application
@@ -26,6 +24,12 @@ pipeline {
         }
 
         stage('Build Client') {
+            steps {
+                container('google') {
+                    // Build your Java application
+                    sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml .'
+                }
+            }
             steps {
                 container('maven') {
                     // Build your Java application
