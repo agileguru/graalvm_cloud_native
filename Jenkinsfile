@@ -18,6 +18,9 @@ pipeline {
                     // Build your Java application
                     sh 'mvn --settings ./settings.xml -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
+                container('google'){
+                    sh 'docker images'
+                }
             }
         }
 
