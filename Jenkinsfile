@@ -21,6 +21,7 @@ pipeline {
             steps {
                 container('maven') {
                     // Build your Java application
+                    sh 'cat ~/.m2/settings.xml'
                     sh 'mvn -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
             }
