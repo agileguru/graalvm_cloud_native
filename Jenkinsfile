@@ -12,12 +12,12 @@ pipeline {
             steps {
                 container('google') {
                     // Build your Java application
-                    sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml ~/.m2/settings.xml'
+                    sh 'gsutil cp gs://devops-353009-configurations/maven/settings.xml .'
                 }
                 container('maven') {
                     // Build your Java application
-                    sh 'cat ~/.m2/settings.xml'
-                    sh 'mvn -f ./graalvmcloudnativeserver/pom.xml clean install'
+                    sh 'cat settings.xml'
+                    sh 'mvn --settings ./settings.xml -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
             }
         }
