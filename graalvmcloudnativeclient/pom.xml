@@ -100,7 +100,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.eclipse.jkube</groupId>
 				<artifactId>kubernetes-maven-plugin</artifactId>
 				<version>1.13.1</version>
@@ -145,7 +145,7 @@
 						</image>
 					</images>
 				</configuration>
-			</plugin> -->
+			</plugin>
 		</plugins>
 	</build>
 	<reporting>
