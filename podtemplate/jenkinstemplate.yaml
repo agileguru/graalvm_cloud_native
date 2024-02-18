@@ -20,7 +20,7 @@ spec:
     command:
     - cat
     tty: true
-  - name: google-cloud-sdk
+  - name: google
     image: google/cloud-sdk:slim
     command:
     - gsutil
