@@ -16,7 +16,6 @@ pipeline {
                 }
                 container('maven') {
                     // Build your Java application
-                    sh 'cat settings.xml'
                     sh 'mvn --settings ./settings.xml -f ./graalvmcloudnativeserver/pom.xml clean install'
                 }
             }
