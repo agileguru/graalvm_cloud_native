@@ -20,7 +20,6 @@ spec:
     command:
     - gsutil
     args: ["cp", "gs://devops-353009-configurations/maven/settings.xml","~/.m2/settings.xml"]
-    tty: true
   - name: docker
     image: docker:25.0.1
     imagePullPolicy: Always
