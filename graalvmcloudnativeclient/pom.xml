@@ -4,10 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.0</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>com.doit.agileguru</groupId>
+		<artifactId>graalvmcloudnative</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.doit.agileguru</groupId>
 	<artifactId>graalvmcloudnativeclient</artifactId>
@@ -19,8 +18,6 @@
 		<docker.platforms>linux/amd64</docker.platforms>
 		<app.executable>/maven/${project.artifactId}-${project.version}.jar</app.executable>
 		<base.image>openjdk:21-jdk</base.image>
-		<sonar.host.url>https://devops.demo.agileguru.org/sonar</sonar.host.url>
-		<sonar.login>squ_cd82592309da1c5e77b65821ce7cf4e697d36342</sonar.login>
 	</properties>
 	<dependencies>
 		<dependency>
