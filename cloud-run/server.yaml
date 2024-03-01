@@ -12,7 +12,7 @@ spec:
         name: server
         ports:
         - name: http1
-          containerPort: 8888
+          containerPort: 8080
         resources:
           limits:
             cpu: 1000m
